@@ -53,7 +53,8 @@ server.addService(TodoService.service, {
        getTodo: (call, callback)=>{
         let todoId = call.request.id;
         let todo = todos.find(t => t.id === todoId);
-        if (todo > 0) {
+        console.log(todo)
+        if (todo) {
             callback(null, todo);
         }else {
             callback({
